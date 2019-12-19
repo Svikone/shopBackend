@@ -15,9 +15,18 @@ exports.addModel = (req, res) => {
     })
 }
 
-exports.getModel = (req, res) => {
+exports.getModelsByMarc = (req, res) => {
 
     Modules.find({marca: req.body.id}).then(result => {
+        console.log(result)
+        res.send(result).sendStatus(200);
+    }).catch(err => {
+        res.status(500);
+    })
+}
+
+exports.getModels = (req, res) => {
+    Modules.find().then(result => {
         console.log(result)
         res.send(result).sendStatus(200);
     }).catch(err => {

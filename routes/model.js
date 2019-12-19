@@ -3,9 +3,10 @@ const Controller = require("../controller/model");
 
 const Router = express.Router()
 
-// Router.post("/marca/add",  Controller.addMarc);
 Router.post("/add",  Controller.addModel);
-Router.post("/marc",  Controller.getModel);
+Router.post("/marc",  Controller.getModelsByMarc);
+Router.post("/get",  Controller.getModels);
+
 
 
 
