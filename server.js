@@ -36,6 +36,6 @@ app.use("/api/order", orderRouter);
 
 
 
-app.listen(9000, function(){
+app.listen(80, function(){
     console.log("server started 9000");
 })
