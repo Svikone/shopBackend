@@ -10,7 +10,7 @@ app.use(multer({dest:__dirname+'/file/uploads/'}).any());
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://app-shop12.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Origin', ["http://localhost:8080","http://localhost:8081"]);
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
+// app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use (bodyParser.json ({
 	extended: true,
