@@ -7,8 +7,7 @@ const multer = require('multer');
 app.use('/file', express.static('file'));
 app.use(multer({dest:__dirname+'/file/uploads/'}).any());
 
-res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+app.use(cors(corsOptions)); 
 // app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use (bodyParser.json ({
