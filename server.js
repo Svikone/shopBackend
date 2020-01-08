@@ -7,7 +7,10 @@ const multer = require('multer');
 app.use('/file', express.static('file'));
 app.use(multer({dest:__dirname+'/file/uploads/'}).any());
 
-app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
+app.use(cors('*'));
+
+// app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
+// app.use(cors({ Access-Control-Allow-Origin:
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use (bodyParser.json ({
 	extended: true,
