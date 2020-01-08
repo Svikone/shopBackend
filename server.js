@@ -7,7 +7,7 @@ const multer = require('multer');
 app.use('/file', express.static('file'));
 app.use(multer({dest:__dirname+'/file/uploads/'}).any());
 
-app.use(cors({origin: ["http://localhost:8080","http://localhost:8081","http://app-shop12.herokuapp.com"]}));
+app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use (bodyParser.json ({
 	extended: true,
