@@ -3,12 +3,12 @@ const Modules = require("../model/marca");
 exports.addMarc = (req, res) => {
     const marc = {
         // body: req.body.body,
+        url_img: req.files[0].filename,
         name: req.body.marca,
-        url_img: "qwe",
         selector: "marcs"
     }
     Modules(marc).save().then(result => {
-        res.sendStatus(200);
+        res.send(result).sendStatus(200);
     }).catch(err => {
         res.sendStatus(500)
     })

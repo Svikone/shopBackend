@@ -5,7 +5,7 @@ exports.addModel = (req, res) => {
         // body: req.body.body,
         name: req.body.model,
         marca: req.body.marc,
-        url_img: "qwe",
+        url_img: req.files[0].filename,
         selector: "models"
     }
     Modules(model).save().then(result => {

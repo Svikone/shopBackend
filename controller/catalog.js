@@ -14,6 +14,7 @@ exports.getCatalogsByCondition = (req, res) => {
 }
 
 exports.addCatalogs= (req,res) => {
+    console.log(req.body.img)
     const catalog = {
         name: req.body.name,
         marca: req.body.marca,
@@ -21,6 +22,9 @@ exports.addCatalogs= (req,res) => {
         catalog: req.body.category,
         price: req.body.price,
         country: req.body.country,
+        url_img: req.files[0].filename
+
+        
     }
     Modules(catalog).save().then(result => {
         // console.log(result)
@@ -37,4 +41,17 @@ exports.getCatalogs = (req, res) => {
     }).catch(err => {
         res.status(500);
     })
+}
+
+exports.getProductsByCart = (req, res) => {
+    const product = req.body.productsId;
+    console.log(product)
+    Modules.find({'_id': {$in: product}}).then(result => {
+        console.log(result)
+        res.send(result).sendStatus(200);
+    }).catch(err => {
+        res.status(500);
+    })
+
+
 }

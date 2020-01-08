@@ -5,7 +5,7 @@ exports.addCategory = (req, res) => {
         // body: req.body.body,
         category: req.body.category,
         category_ru: req.body.category_ru,
-        url_img: "qwe",
+        url_img: req.files[0].filename,
         selector: "category"
     }
     Modules(category).save().then(result => {

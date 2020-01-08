@@ -7,6 +7,8 @@ const Router = express.Router()
 Router.post("/get/all/condition",  Controller.getCatalogsByCondition);
 Router.post("/add",  Controller.addCatalogs);
 Router.post("/get/all",  Controller.getCatalogs);
+Router.post("/cart/added/products",  Controller.getProductsByCart);
+
 
 
 
