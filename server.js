@@ -21,7 +21,9 @@ const catalogRouter = require("./routes/catalog");
 const orderRouter = require("./routes/order");
 
 
-
+app.get("/",(req,res) => {
+	res.end("<h1>hello world</h1>")
+})
 app.use("/api/admin", adminRouter);
 app.use("/api/model", modelRouter);
 app.use("/api/category", categoryRouter);
