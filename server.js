@@ -20,7 +20,7 @@ const categoryRouter = require("./routes/category");
 const catalogRouter = require("./routes/catalog");
 const orderRouter = require("./routes/order");
 
-
+let port = process.env.PORT || 9000;
 app.get("/",(req,res) => {
 	res.end("<h1>hello world</h1>")
 })
@@ -36,6 +36,6 @@ app.use("/api/order", orderRouter);
 
 
 
-app.listen(80, function(){
+app.listen(port, function(){
     console.log("server started 9000");
 })
