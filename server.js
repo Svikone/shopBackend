@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-// app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
+app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use (bodyParser.json ({
 	extended: true,
