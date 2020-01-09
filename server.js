@@ -1,20 +1,13 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-// const cors = require("cors");
+const cors = require("cors");
 const db = require("./db");
 const multer = require('multer');
 app.use('/file', express.static('file'));
 app.use(multer({dest:__dirname+'/file/uploads/'}).any());
 
-app.use(function(req, res, next) { 
-	res.header("Access-Control-Allow-Origin", '*'); 
-	res.header("Access-Control-Allow-Credentials", true); 
-	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS'); 
-	res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-	next();							 
-})
-
+app.use(cors());
 // app.use(cors({origin: ["http://localhost:8080","http://localhost:8081"]}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use (bodyParser.json ({
