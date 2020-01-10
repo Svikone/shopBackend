@@ -21,7 +21,7 @@ const categoryRouter = require("./routes/category");
 const catalogRouter = require("./routes/catalog");
 const orderRouter = require("./routes/order");
 
-let port = process.env.app-shop-backend.herokuapp.com || 9000;
+let port = process.env.PORT || 9000;
 app.post('/test',(req,res) => {
 	console.log('work')
 	res.send({message: 'work pls'});
