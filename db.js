@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const uri = process.env.MONGO_URI || "mongodb+srv://vlad:admin@cluster0-vzqoj.mongodb.net/shop?retryWrites=true&w=majority" ;
 
 mongoose.connect(uri, { 
-	useUnifiedTopology: true
+	useUnifiedTopology: true,
+	useNewUrlParser: true
 	}).then(() => {
 	console.log("Database is worked");
 }).catch( (e) =>{
