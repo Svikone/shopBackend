@@ -15,7 +15,7 @@ const uri = process.env.MONGO_URI || "mongodb+srv://vlad:admin@cluster0-vzqoj.mo
 const MongoClient = require("mongodb").MongoClient;
  
 // создаем объект MongoClient и передаем ему строку подключения
-const mongoClient = new MongoClient(uri, { useNewUrlParser: true });
+const mongoClient = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true });
 mongoClient.connect(function(err, client){
  
     if(err){
