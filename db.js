@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const uri = "mongodb+srv://vlad:admin@cluster0-vzqoj.mongodb.net/shop" || process.env.MONGO_URI;
+const uri = process.env.MONGO_URI || "mongodb+srv://vlad:admin@cluster0-vzqoj.mongodb.net/shop" ;
 
 mongoose.connect(uri, { useNewUrlParser: true }).then(() => {
 	console.log("Database is worked");
