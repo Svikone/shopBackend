@@ -23,3 +23,4 @@ exports.getCategorys = (req, res) => {
         res.status(500);
     })
 }
+

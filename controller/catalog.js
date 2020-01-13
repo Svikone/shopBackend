@@ -23,8 +23,6 @@ exports.addCatalogs= (req,res) => {
         price: req.body.price,
         country: req.body.country,
         url_img: req.files[0].filename
-
-        
     }
     Modules(catalog).save().then(result => {
         // console.log(result)
@@ -52,6 +50,14 @@ exports.getProductsByCart = (req, res) => {
     }).catch(err => {
         res.status(500);
     })
+}
 
-
+exports.searchCategorys = (req, res) => {
+    console.log("test")
+    Modules.find({ $text: {$search: "масло"}}).then(result => {
+        console.log(result)
+        res.send(result).sendStatus(200);
+    }).catch(err => {
+        res.status(500);
+    })
 }

@@ -9,4 +9,6 @@ const catalogSchema = mongoose.Schema({
     country: String
 
 });
+catalogSchema.index({name: 'text', 'profile.something': 'text'});
+
 module.exports = mongoose.model("catalogs",catalogSchema);

@@ -22,13 +22,13 @@ const catalogRouter = require("./routes/catalog");
 const orderRouter = require("./routes/order");
 
 let port = process.env.PORT || 9000;
-app.post('/test',(req,res) => {
-	console.log('work')
-	res.send({message: 'work pls'});
-})
-app.get("/",(req,res) => {
-	res.end("<h1>hello world</h1>")
-})
+// app.post('/test',(req,res) => {
+// 	console.log('work')
+// 	res.send({message: 'work pls'});
+// })
+// app.get("/",(req,res) => {
+// 	res.end("<h1>hello world</h1>")
+// })
 app.use("/api/admin", adminRouter);
 app.use("/api/model", modelRouter);
 app.use("/api/category", categoryRouter);
