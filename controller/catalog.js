@@ -54,7 +54,7 @@ exports.getProductsByCart = (req, res) => {
 
 exports.searchCategorys = (req, res) => {
     console.log("test")
-    Modules.find({ $text: {$search: "масло"}}).then(result => {
+    Modules.find({ $text: {$search: req.body.searchText}}).then(result => {
         console.log(result)
         res.send(result).sendStatus(200);
     }).catch(err => {
