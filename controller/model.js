@@ -33,3 +33,12 @@ exports.getModels = (req, res) => {
         res.status(500);
     })
 }
+
+exports.removeModels = (req, res) => {
+    Modules.deleteOne({_id: req.body.id}).then(result => {
+        console.log(result)
+        res.sendStatus(200);
+    }).catch(err => {
+        res.status(500);
+    })
+}

@@ -61,3 +61,12 @@ exports.searchCategorys = (req, res) => {
         res.status(500);
     })
 }
+
+exports.removeCategorys = (req, res) => {
+    Modules.deleteOne({_id: req.body.id}).then(result => {
+        console.log(result)
+        res.sendStatus(200);
+    }).catch(err => {
+        res.status(500);
+    })
+}
