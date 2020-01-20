@@ -33,7 +33,7 @@ exports.getMarcsId = (req, res) => {
 
 exports.updateMarcs = (req, res) => {
     const marc = {
-        name: req.body.marca,
+        name: req.body.name,
     }
     if(req.files.length) {
         marc.url_img = req.files[0].filename
