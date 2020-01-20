@@ -6,8 +6,7 @@ const Router = express.Router()
 Router.post("/marca/add",  Controller.addMarc);
 Router.post("/get/marcs",  Controller.getMarcs);
 Router.post("/get/marcs/id",  Controller.getMarcsId);
-
-
+Router.post("/get/marca/update",  Controller.updateMarcs);
 
 module.exports = Router;
 
