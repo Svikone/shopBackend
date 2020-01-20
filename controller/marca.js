@@ -38,7 +38,7 @@ exports.updateMarcs = (req, res) => {
     if(req.files.length) {
         marc.url_img = req.files[0].filename
     }
-    Modules.findOne({_id: req.body.id}).updateOne({marc}).then(result => {
+    Modules.findOne({_id: req.body.id}).updateOne(marc).then(result => {
         res.send(result).sendStatus(200);
     }).catch(err => {
         res.sendStatus(500)
