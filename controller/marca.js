@@ -2,7 +2,6 @@ const Modules = require("../model/marca");
 
 exports.addMarc = (req, res) => {
     const marc = {
-        // body: req.body.body,
         url_img: req.files[0].filename,
         name: req.body.marca,
         selector: "marcs"
