@@ -43,3 +43,12 @@ exports.updateMarcs = (req, res) => {
         res.sendStatus(500)
     })
 }
+
+exports.removeMarcsId = (req, res) => {
+    Modules.deleteOne({_id: req.body.id}).then(result => {
+        res.send(result).sendStatus(200);
+    }).catch(err => {
+        res.sendStatus(500)
+    })
+}
+
