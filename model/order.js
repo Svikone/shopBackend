@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const orderSchema = mongoose.Schema({
-   status_confirm: String,
-   status_payment: String,
+   status_confirm: Boolean,
+   status_payment: Boolean,
    user_name: String,
    phone: Number 
 });
