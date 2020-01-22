@@ -62,7 +62,7 @@ exports.orderById = (req, res) => {
 }
 
 exports.updateStatusConfirm = (req, res) => {
-    orderModules.findOne({_id: req.body.id}).updateOne({status:req.body.status}).then(result => {
+    orderModules.findOne({_id: req.body.id}).updateOne({status_confirm: req.body.status}).then(result => {
         res.send(result).sendStatus(200);
     }).catch(err => {
         res.sendStatus(500)
@@ -70,7 +70,7 @@ exports.updateStatusConfirm = (req, res) => {
 }
 
 exports.updateStatusPayment = (req, res) => {
-    orderModules.findOne({_id: req.body.id}).updateOne({status:req.body.status}).then(result => {
+    orderModules.findOne({_id: req.body.id}).updateOne({status_payment: req.body.status}).then(result => {
         res.send(result).sendStatus(200);
     }).catch(err => {
         res.sendStatus(500)
