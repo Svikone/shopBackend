@@ -23,7 +23,7 @@ exports.getMarcs = (req, res) => {
 }
 
 exports.getMarcsId = (req, res) => {
-    Modules.find({'_id': {$in: req.body.id}}).then(result => {
+    Modules.find({_id: req.body.id}).then(result => {
         res.send(result).sendStatus(200);
     }).catch(err => {
         res.sendStatus(500)
