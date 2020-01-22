@@ -60,3 +60,19 @@ exports.orderById = (req, res) => {
         res.sendStatus(500)
     })
 }
+
+exports.updateStatusConfirm = (req, res) => {
+    orderItemModules.findOneAndUpdate({_id: req.body.id},{status:req.body.status}).then(result => {
+        res.send(result).sendStatus(200);
+    }).catch(err => {
+        res.sendStatus(500)
+    })
+}
+
+exports.updateStatusPayment = (req, res) => {
+    orderItemModules.findOneAndUpdate({_id: req.body.id},{status:req.body.status}).then(result => {
+        res.send(result).sendStatus(200);
+    }).catch(err => {
+        res.sendStatus(500)
+    })
+}
