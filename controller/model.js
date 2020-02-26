@@ -54,6 +54,7 @@ exports.getModelsById = (req, res) => {
 exports.updateModels = (req, res) => {
     const model = {
         name: req.body.name,
+        marca: req.body.marca
     }
     if(req.files.length) {
         model.url_img = req.files[0].filename
